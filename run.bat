@@ -1,1 +1,1 @@
-pytest -s -v -m "sanity".\testCases
+pytest -s -v .\testCases -m "sanity" 

@@ -6,8 +6,8 @@ import os.path
 
 import pytest
 from selenium import webdriver
-from selenium.webdriver.edge.service import Service as EdgeService
-from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.webdriver import WebDriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -46,7 +46,7 @@ def pytest_addoption(parser):  #this will get the value from CLI/hooks
 
 @pytest.fixture
 def browser(request):
-    return request.config.getoption("--browser")#This will return browser value to setup method.
+    return request.config.getoption("--browser")#This will return browser value to set up method.
 
 
 ###Generating HTML report########
@@ -55,10 +55,10 @@ def pytest_configure(config):
     config._metadata['Project name']='Open cart'
     config._metadata['Module name'] ='CutRegistration'
 
-#Hook for delete/modify environment info for html report
+#Hook to delete/modify environment info for html report
 @pytest.mark.optionalhook
 def pytest_metadata(metadata):
-    metadata.pop("JAVA_HOMW",None)
+    metadata.pop("JAVA_HOME",None)
     metadata.pop("plugins",None)
 
 

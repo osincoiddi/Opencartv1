@@ -1,8 +1,8 @@
 #Data driven testing:
 # XLUtils are pre-written codes to help in data driven testing
 #1)Benefits of Util file:
-#2)Utiliti files are reduce time consumption in testing since you've already written codes
-#3)Utiliti files reduce code complexities.
+#2)Utilities files reduce time consumption in testing since you've already written codes
+#3)Utilities files reduce code complexities.
 #The ff codes are used in projects for Excel Utilities testing.
 #NOTE:Copied from previous project under day24
 

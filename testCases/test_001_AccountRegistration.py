@@ -4,7 +4,7 @@
 #Execute via terminal path: pytest -s  -v testCases/test_001_AccountRegistration.py
 #chrome by default: pytest -s  -v testCases/test_001_AccountRegistration.py
 #specify browser type if testing multiple browsers.Refer to conftest.py.
-#{pytest -s -v testCases/test_001_AccountRegistration.py --browser edge
+#http://localhost:5002/{pytest -s -v testCases/test_001_AccountRegistration.py --browser edge
 #{pytest -s -v testCases/test_001_AccountRegistration.py --browser firefox
 
 #(os.path.abspath(os.curdir) is used for screenshot location.
@@ -25,13 +25,15 @@ from selenium.webdriver.support.expected_conditions import alert_is_present
 
 from PageObjects.HomePage import HomePage
 from PageObjects.AccountRegistrationPage import AccountRegistration
-from utilities.readproperties import Readconfig
+from PageObjects.LoginPage import LoginPage
+from PageObjects.MyAccountPage import MyAccountPage
+from utilities.readproperties import ReadConfig
 from utilities.customLogger import LogGen #for logging
 
 
 class Test_001_AccountRegistration:
-    baseURL="https://www.opencart.com/"#Readconfig.getApplicationURL() can replace the url
-    # bseURL=Readconfig.getApplicationURL()
+    # baseURL="https://www.opencart.com/"#Readconfig.getApplicationURL() can replace the url
+    baseURL=ReadConfig.getApplicationURL()
     logger=LogGen.loggen() #For logging.
 
     @pytest.mark.regression
